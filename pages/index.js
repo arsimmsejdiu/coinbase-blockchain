@@ -1,4 +1,5 @@
 //import { useEffect, useState } from "react"
+import Head from "next/head";
 import styled from "styled-components"
 import { useWeb3 } from '@3rdweb/hooks';
 import Dashboard from "../components/Dashboard";
@@ -7,6 +8,9 @@ export default function Home() {
   const { address, connectWallet } = useWeb3();
   return (
     <Wrapper>
+      <Head>
+        <title>Login - Coinbase Blockchain</title>
+      </Head>
       {address ? (
         <Dashboard address={address}/>
       ) : (
@@ -44,7 +48,7 @@ const WalletConnect = styled.div`
 const Button = styled.button`
   border: 1px solid #282b2f;
   padding: 0.8rem;
-  fonts-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   border-radius: 0.4rem;
   background-color: #3773f5;
