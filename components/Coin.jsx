@@ -12,9 +12,33 @@ const Coin = ({ coin }) => {
             <CoinIcon>
               <Image src={coin.logo} alt={coin.name} />
             </CoinIcon>
-            {coin.name}
+            <div>
+              <Primary>{coin.name}</Primary>
+              <Secondary>{coin.sign}</Secondary>
+            </div>
           </NameCol>
         </div>
+        <div style={{ flex: 2 }}>
+          <Primary>
+            {"$ "}
+            {coin.balanceUsd}
+          </Primary>
+          <Secondary>
+            {coin.balanceCoin} {coin.sign}
+          </Secondary>
+        </div>
+        <div style={{ flex: 1, marginLeft: "1.5rem" }}>
+          <Primary>
+            {"$ "}
+            {coin.priceUsd}
+          </Primary>
+          <div style={{ color: coin.change < 0 ? "#f0616d" : "#26ad75" }}>
+            {coin.change > 0 && "+"}
+            {coin.change}%
+          </div>
+        </div>
+        <div style={{ flex: 1, marginLeft: "1.5rem" }}>{coin.allocation}%</div>
+        <div style={{ flex: 0 }}><BsThreeDotsVertical /></div>
       </div>
     </Wrapper>
   );
