@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Main from "../components/Main";
@@ -6,6 +7,9 @@ import Main from "../components/Main";
 const Dashboard = ({ address }) => {
   return (
     <Wrapper>
+      <Head>
+        <title>Dashbord - Coinbase Blockchain</title>
+      </Head>
       <MainContainer>
         <Header />
         <Main />
